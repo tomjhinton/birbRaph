@@ -93,7 +93,7 @@ gltfLoader.load(
 )
 
 
-const floorGeometry = new THREE.CircleGeometry(5, 64)
+const floorGeometry = new THREE.CircleGeometry(25, 64)
 const boxGeometry = new THREE.BoxGeometry(50, 50, 50)
 
 const shaderMaterial = new THREE.ShaderMaterial({
@@ -173,6 +173,8 @@ scene.add(camera)
 // Controls
 const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
+controls.enableZoom = false;
+controls.maxPolarAngle = Math.PI / 2 - 0.1
 
 /**
  * Renderer
